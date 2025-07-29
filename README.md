@@ -7,5 +7,5 @@ This is a repository containing experiments for the subject ADBMS for 5th sem(Pa
   - Medium
     - ADBMS_Worksheet_[experiment_number]_Medium.pdf
     - script.sql
-   
-  This structure is subject to change.
+
+This structure is subject to change.
