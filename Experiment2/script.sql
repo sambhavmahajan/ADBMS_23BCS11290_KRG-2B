@@ -27,12 +27,10 @@ INSERT INTO Courses VALUES (9, 'CONT_23TDT-312', 'APTITUDE-III', 'Manphool Singh
 INSERT INTO Courses VALUES (10, '23TDP-311_23BCS_KRG-2_B_B', 'SOFT SKILLS-III', 'Gurvinder Kaur', 2);
 INSERT INTO Courses VALUES (11, '23TDT-312_23BCS_KRG-2_B_B', 'APTITUDE-III', 'Vinay Kumar', 2);
 
-SELECT DeptName
+SELECT D.DeptName
 FROM Departments D
-WHERE (
-    SELECT COUNT(*)
-    FROM Courses C
-    WHERE C.DeptID = D.DeptID
-) > 2;
+JOIN Courses C ON D.DeptID = C.DeptID
+GROUP BY D.DeptID, D.DeptName
+HAVING COUNT(*) > 2;
 
 GRANT SELECT ON Courses TO student_user;
